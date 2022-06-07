@@ -27,6 +27,8 @@ search.addEventListener ("click", (event) => {
     .then(function (data){
         console.log("Response from iTunes API: ", data)
     
+        searchResults.innerHTML = ""
+
     for (let song of data.results) {
         let songDiv = document.createElement("div")
         songDiv.classList.add("song-info")
@@ -56,9 +58,18 @@ search.addEventListener ("click", (event) => {
         albumArtElement.src = song.artworkUrl100
         songDiv.appendChild(albumArtElement)
         
+       
+
     searchResults.appendChild(songDiv)    
-
+    
     }
+    
+})
+})
 
-})
-})
+  // function EnableDisable(txtPassportNumber) {
+    //     if (txtPassportNumber.value.trim() != "") {
+    //     search.disabled = false;
+    // } else {
+    //     search.disabled = true;
+    // }}
